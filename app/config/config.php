@@ -2,15 +2,15 @@
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'school');
+define('DB_NAME', 'pizzaplace');
 
 define('APPROOT', dirname(dirname(__FILE__)));
 
 
 // Zet hier je virtualhostnaam. Let op dat er http:// voor staat anders werkt het niet
-define('URLROOT', 'http://localhost/school/');
+define('URLROOT', 'http://localhost/pizzaplace');
 
-define('SITENAME', 'School');
+define('SITENAME', 'pizzaplace');
 
 date_default_timezone_set('Europe/Amsterdam');
 

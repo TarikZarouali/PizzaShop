@@ -1,18 +1,350 @@
-.bx {
-  font-size: 5rem;
-}
-table,
-th,
-td {
-  border: 1px solid;
-  font-size: 25px;
+/* Reset default margin and padding for all elements */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; /* Add your background color or image */
+  background-size: cover;
 }
 
-.bx-question-mark {
-  color: blue;
-  font-size: 50px;
+/* Custom Navbar Style */
+.custom-navbar {
+  background-color: #4ea85e;
+  transition: background-color 0.3s;
 }
-.bx-x {
+
+.custom-navbar:hover {
+  background-color: #55b365;
+  transition: background-color 0.3s;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 10rem;
+  z-index: 2;
+}
+
+/* Vertical Navbar Style */
+.vertical-navbar {
+  background-color: rgba(
+    0,
+    255,
+    0,
+    0.15
+  ); /* Change the background color here */
+  width: 150px;
+  position: fixed;
+  top: 3.5rem;
+  left: 0;
+  height: 100vh;
+  padding-top: 20px;
+  z-index: 2;
+}
+
+.filter-button {
+  appearance: button;
+  background-color: #55b365; /* Update button colors */
+  border: 1px solid #4ea85e;
+  border-radius: 1rem;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Your Font", sans-serif; /* Add your preferred font */
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-transform: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  margin-top: 2rem;
+}
+
+/* Add a background color to the navbar that is slightly darker than the body background */
+.vertical-navbar .nav-link {
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.vertical-navbar .nav-link:hover {
+  background-color: #55b365;
+  transition: background-color 0.3s;
+}
+
+/* Content Container Style */
+
+.content {
+  margin: 0 auto; /* Center content horizontally */
+  max-width: 1200px; /* Set your desired maximum width */
+  padding: 70px 20px 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style for Cards */
+.card {
+  width: 18rem;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Style for Buttons */
+.button {
+  appearance: button;
+  background-color: #55b365; /* Update button colors */
+  border: 1px solid #4ea85e;
+  border-radius: 1rem;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Your Font", sans-serif; /* Add your preferred font */
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-transform: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button:focus:not(:focus-visible),
+.button:focus {
+  outline: 0;
+}
+
+.button:hover {
+  background-color: #4ea85e; /* Hover button color */
+  border-color: #4ea85e;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.button:active {
+  background-color: #3a38ae;
+  background-image: none;
+  border-color: #3a38ae;
+  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.button:active:focus {
+  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset,
+    rgba(104, 101, 235, 0.5) 0 0 0 0.2rem;
+  transition: box-shadow 0.3s;
+}
+
+.button:disabled {
+  background-image: none;
+  box-shadow: none;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+/* Add styles for the shopping cart section */
+.shopping-cart {
+  position: fixed;
+  top: 5rem;
+  right: 1rem;
+  background-color: #f4f4f4; /* Background color similar to the body */
+  border: 1px solid #e0e0e0; /* Light gray border */
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  color: #333;
+  max-height: 70vh;
+  overflow-y: auto;
+  display: none;
+  width: 300px;
+}
+
+.shopping-cart h2 {
+  text-align: center;
+  margin: 0 0 10px;
+  color: #555;
+  font-size: 1.5rem; /* Slightly larger font size */
+}
+
+.shopping-cart .close-cart-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem; /* Slightly larger close button */
+  cursor: pointer;
+  color: #555;
+}
+
+.shopping-cart.show-cart {
+  display: block;
+}
+
+/* Add the following style for cart items */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: relative; /* Added for relative positioning */
+  text-decoration: none; /* Remove text decoration */
+  list-style: none; /* Remove list item markers */
+}
+
+.item-name {
+  flex: 1;
+  text-decoration: none; /* Remove text decoration */
+  list-style: none; /* Remove list item markers */
+}
+
+.details-button {
+  cursor: pointer;
+  background-color: #3a38ae;
+  border-radius: 15px;
+  color: white;
+  margin-right: 2px;
+  text-decoration: none; /* Remove text decoration */
+  list-style: none; /* Remove list item markers */
+}
+
+/* Add the following style for the details dropdown */
+.details {
+  list-style: none;
+  padding-left: 20px;
+  display: none;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: absolute; /* Position relative to the cart item */
+  top: 100%; /* Position below the cart item */
+  left: 0;
+  z-index: 1;
+}
+
+/* Remove decoration (usually underline) from list items */
+.details li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.details:not(.hidden) {
+  display: block;
+}
+
+/* Add style for the remove button */
+.remove-button {
+  cursor: pointer;
+  background-color: #ff6b6b;
+  color: white;
+  border-radius: 15px; /* Red color */
+  text-decoration: none; /* Remove text decoration */
+  list-style: none; /* Remove list item markers */
+}
+
+.checkout-button {
+  cursor: pointer;
+  background-color: #4ea85e;
+  color: white;
+  border-radius: 15px;
+}
+
+.cart-items li {
+  list-style-type: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Adjust the margin-top as needed */
+}
+
+/* Add styles for the buttons in your CSS */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px; /* Adjust the margin-top as needed */
+}
+
+.filter-button,
+.show-all-button {
+  padding: 10px 20px;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; /* Use your desired theme color */
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+.filter-button:hover,
+.show-all-button:hover {
+  background-color: #0056b3; /* Hover color, adjust as needed */
+}
+
+.error {
   color: red;
-  font-size: 50px;
+  font-size: 2rem;
+}
+
+.apply-filter-button {
+  background-color: #4ea85e;
+  color: white;
+  border-radius: 15px;
+  padding: 10px 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  margin: 0 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+}
+
+.pagination a.active {
+  background-color: #fff;
+  color: #007bff;
 }

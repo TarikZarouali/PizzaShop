@@ -1,10 +1,9 @@
 <?php
-// Dit wordt de parentclass van alle andere controller
-// We loaden de model en de view
+// This is the parent class for all other controllers.
+// We load the model and the view.
 class Controller
 {
-  // Geen properties
-
+  // No properties
 
   public function model($model)
   {
@@ -17,7 +16,7 @@ class Controller
     if (file_exists(APPROOT . '/views/' . $view . '.php')) {
       require_once(APPROOT . '/views/' . $view . '.php');
     } else {
-      die('View bestaat niet');
+      die('View does not exist');
     }
   }
 
