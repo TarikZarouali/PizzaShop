@@ -1,5 +1,5 @@
 <?php
-class CartsController extends Controller
+class CartController extends Controller
 {
     // private $pizzaModel;
 
